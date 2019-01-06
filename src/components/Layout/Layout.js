@@ -1,9 +1,10 @@
 import React from "react";
 import Aux from "../../hoc/Aux";
 import classes from "./Layout.css";
+import Burger from "../Burger/Burger";
 const layout = props => (
   <Aux>
-    <div>Toolbar,Sidebar,Backdrop</div>
+    <Burger />
     <main className={classes.Content}>{props.children}</main>
   </Aux>
 );

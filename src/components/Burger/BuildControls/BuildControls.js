@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './BuildControls';
+import classes from './BuildControls.css';
 import BuildControl from './BuildControl/BuildControl';
 
 const controls = [
@@ -15,6 +15,7 @@ const buildControls = (props) => (
             <BuildControl
                 key={cntrl.label}
                 label={cntrl.label}
+                add={() => props.added(cntrl.type)}
             />
         ))}
     </div>

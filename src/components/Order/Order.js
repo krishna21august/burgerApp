@@ -1,7 +1,7 @@
 import React from 'react';
-
+import classes from './Order.css';
 const order = () => (
-    <div>
+    <div className={classes.Order}>
 
     </div>
 );

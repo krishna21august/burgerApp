@@ -10,6 +10,17 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import reducer from './store/reducer';
 
+const logger = state => {
+    return next => {
+        return action => {
+            console.log('[Middleware] dispatching', action);
+            const result = next(action);
+            console.log('[Middleware] next state', store.getState());
+            return result;
+
+        }
+    }
+}
 
 const store = createStore(reducer);
 

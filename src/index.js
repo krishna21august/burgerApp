@@ -8,21 +8,10 @@ import { createStore } from 'redux';
 
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom';
-import reducer from './store/reducer';
+import burgerBuilder from './store/reducers/burgerBuilder';
 
-const logger = state => {
-    return next => {
-        return action => {
-            console.log('[Middleware] dispatching', action);
-            const result = next(action);
-            console.log('[Middleware] next state', store.getState());
-            return result;
-
-        }
-    }
-}
-
-const store = createStore(reducer);
+const store = createStore(burgerBuilder, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const app = (
     <Provider store={store}>
